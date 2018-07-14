@@ -1,0 +1,44 @@
+<%= form_for(mountain) do |f| %>
+  <%= f.label :name, "山名" %>
+  <%= f.text_field :name, class: "form-control" %>
+  
+  <%= f.label :area, "地域" %>
+  <%= f.text_field :area, class: "form-control" %>
+  <p>半角数字で入力してください<br>
+     尾張：1, 西三河：2, 奥三河：3, 東三河：4, 中国:5</p>
+  
+  <%= f.label :climbing_date, "登山日" %>
+  <%= f.text_field :climbing_date, class: "form-control"%>
+  <p>年/月/日　半角数字で入力してください<br>
+     例：2018/7/14</p>
+  
+  <%= f.label :height, "標高" %>
+  <%= f.text_field :height, class: "form-control"%>
+  
+  <%= f.label :time, "登山時間"%>
+  <%= f.text_field :time, class: "form-control"%>
+  
+  <%= f.label :distance, "歩行距離"%>
+  <%= f.text_field :distance, class: "form-control"%>
+  
+  <%= f.label :height_difference, "高低差"%>
+  <%= f.text_field :height_difference, class: "form-control"%>
+  
+  <%= f.label :view, "眺望"%>
+  <%= f.text_field :view, class: "form-control"%>
+  <p>0~3の半角数字で入力してください</p>
+  
+  <%= f.label :recommend, "おすすめ度"%>
+  <%= f.text_field :recommend, class: "form-control"%>
+  <p>0~3の半角数字で入力してください</p>
+  
+  <%= f.label :fatigue, "お疲れ度"%>
+  <%= f.text_field :fatigue, class: "form-control"%>
+  <p>0~3の半角数字で入力してください</p>
+  
+  <%= f.label :comment, "感想" %>
+  <%= f.text_area :comment, class:"form-control" %>
+  <p></p>
+
+  <%= f.submit "投稿",class: 'btn-primary btn-block' %>
+<% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180714063452) do
+ActiveRecord::Schema.define(version: 20180714084612) do
 
   create_table "managers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20180714063452) do
   create_table "mountains", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.integer  "area"
-    t.datetime "climbing_date"
+    t.string   "climbing_date"
     t.string   "height"
     t.string   "time"
     t.string   "distance"
@@ -32,8 +32,9 @@ ActiveRecord::Schema.define(version: 20180714063452) do
     t.integer  "recommend"
     t.integer  "fatigue"
     t.integer  "manager_id"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.text     "comment",           limit: 65535
     t.index ["manager_id"], name: "index_mountains_on_manager_id", using: :btree
   end
 

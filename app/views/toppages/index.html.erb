@@ -22,7 +22,13 @@
   </div>
 <% end %>
 
-
+<% if manager_logged_in? %>
+  <ul>
+    <li><%= link_to "備忘録一覧", mountains_path %></li>
+    <li>ギャラリー一覧</li>
+    <li>お知らせ一覧</li>
+  </ul>
+<% end %>
 
 <h2>愛知の130山</h2>
 <h2>What's new</h2>

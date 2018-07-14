@@ -1,0 +1,27 @@
+<h1>備忘録一覧</h1>
+
+<div>
+  <table class="table">
+    <thead>
+      <th>id</th>
+      <th>山名</th>
+      <th>標高</th>
+      <th>登山日</th>
+    </thead>
+    <tbody>
+      <% @mountains.each do |mountain| %>
+      <tr>
+        <th><%=link_to "#{mountain.id}", edit_mountain_path(mountain)%></th>
+        <th><%= mountain.name%></th>
+        <th><%= mountain.height %></th>
+        <th><%= mountain.climbing_date %></th>
+        <th><%= link_to "Delete", mountain, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-xs' %>
+</th>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<div class="text-center">
+  <%= link_to "新規備忘録", new_mountain_path, class: "btn btn-primary"%>
+</div>

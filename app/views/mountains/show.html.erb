@@ -1,0 +1,62 @@
+<div class="data-top">
+  <h1><%= @mountain.name %></h1>
+  <div class="top-right">
+    <p>登山日 <%= @mountain.climbing_date %></p>
+  </div>
+</div>
+<div class="data-main">
+  <div class="main-left">
+    <table class="table">
+      <tr>
+        <th>標高</th>
+        <td><%= @mountain.height %></td>
+      </tr>
+      <tr>
+        <th>所要時間</th>
+        <td><%= @mountain.time %></td>
+      </tr>
+      <tr>
+        <th>歩行距離</th>
+        <td><%= @mountain.distance %></td>
+      </tr>
+      <tr>
+        <th>高低差</th>
+        <td><%= @mountain.height_difference %></td>
+      </tr>
+      <tr>
+        <th>眺望</th>
+        <td>
+          <% @mountain.view.times do%>
+          <%= "★" %>
+          <% end %>
+          <% (3 - @mountain.view).times do %>
+          <%= "☆" %>
+          <% end %>
+        </td>
+      </tr>
+      <tr>
+        <th>おすすめ度</th>
+        <td>
+          <% @mountain.recommend.times do%>
+          <%= "★" %>
+          <% end %>
+          <% (3 - @mountain.recommend).times do %>
+          <%= "☆" %>
+          <% end %>
+        </td>
+      </tr>
+      <tr>
+        <th>お疲れ度</th>
+        <td>
+          <% @mountain.fatigue.times do%>
+          <%= "★" %>
+          <% end %>
+          <% (3 - @mountain.fatigue).times do %>
+          <%= "☆" %>
+          <% end %>
+        </td>
+      </tr>
+    </table>
+  </div>
+  
+</div>
