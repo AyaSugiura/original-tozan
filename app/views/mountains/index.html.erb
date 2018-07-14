@@ -5,6 +5,7 @@
     <thead>
       <th>id</th>
       <th>山名</th>
+      <th>エリア</th>
       <th>標高</th>
       <th>登山日</th>
     </thead>
@@ -13,6 +14,20 @@
       <tr>
         <th><%=link_to "#{mountain.id}", edit_mountain_path(mountain)%></th>
         <th><%= mountain.name%></th>
+        <th>
+          <%= mountain.area %>.
+          <% if mountain.area == 1 %>
+            <%= "尾張" %>
+          <% elsif mountain.area == 2 %>
+            <%="西三河"%>
+          <% elsif mountain.area == 3 %>
+            <%="奥三河"%>
+          <% elsif mountain.area == 4 %>
+            <%="東三河"%>
+          <% elsif mountain.area == 5 %>
+            <%="中国"%>
+          <% end %>
+        </th>
         <th><%= mountain.height %></th>
         <th><%= mountain.climbing_date %></th>
         <th><%= link_to "Delete", mountain, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-xs' %>

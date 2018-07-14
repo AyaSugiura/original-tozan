@@ -2,7 +2,7 @@ class MountainsController < ApplicationController
   before_action :require_manager_logged_in, only: [:index, :new, :create, :edit, :update, :destroy]
   
   def index
-    @mountains = Mountain.all
+    @mountains = Mountain.all.order("created_at DESC").page(params[:page])
   end
   
   def show
@@ -17,7 +17,7 @@ class MountainsController < ApplicationController
     @mountain = current_manager.mountains.build(mountain_params)
     if @mountain.save
       flash[:success] = '登山備忘録を投稿しました。'
-      redirect_to index
+      redirect_to mountains_path
     else
       @mountains = current_manager.mountains.order('created_at DESC').page(params[:page])
       flash.now[:danger] = '投稿に失敗しました。'
@@ -46,9 +46,30 @@ class MountainsController < ApplicationController
     redirect_to mountains_path
   end
   
+  def owari
+    @mountains_owari = Mountain.where(area: 1).order("created_at DESC").page(params[:page])
+  end
+  
+  def nishimikawa
+    @mountains_nishimikawa = Mountain.where(area: 2).order("created_at DESC").page(params[:page])
+  end
+  
+  def okumikawa
+    @mountains_okumikawa = Mountain.where(area: 3).order("created_at DESC").page(params[:page])
+  end
+  
+  def higashimikawa
+    @mountains_higashimikawa = Mountain.where(area: 4).order("created_at DESC").page(params[:page])
+  end
+  
+  def china
+    @mountains_china = Mountain.where(area: 5).order("created_at DESC").page(params[:page])
+  end
+  
+  
   private
   
   def mountain_params
-    params.require(:mountain).permit(:name, :area, :climbing_date, :height, :time, :distance, :height_difference, :view, :recommend, :fatigue)
+    params.require(:mountain).permit(:name, :area, :climbing_date, :height, :time, :distance, :height_difference, :view, :recommend, :fatigue, :comment)
   end
 end

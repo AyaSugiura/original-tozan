@@ -1,0 +1,20 @@
+<h1>東三河の山</h1>
+<div>
+  <table class="table">
+    <thead>
+      <th>山名</th>
+      <th>標高</th>
+      <th>登山日</th>
+    </thead>
+    <tbody>
+      <% @mountains_higashimikawa.each do |mountain| %>
+      <tr>
+        <th><%=link_to "#{mountain.name}", mountain_path(mountain)%></th>
+        <th><%= mountain.height %></th>
+        <th><%= mountain.climbing_date %></th>
+      </tr>
+      
+      <% end %>
+    </tbody>
+  </table>
+</div>

@@ -7,5 +7,11 @@ Rails.application.routes.draw do
 
   resources :managers, only: [:index]
   
+  get "mountains/owari", to:"mountains#owari"
+  get "mountains/nishimikawa", to:"mountains#nishimikawa"
+  get "mountains/okumikawa", to: "mountains#okumikawa"
+  get "mountains/higashimikawa", to:"mountains#higashimikawa"
+  get "mountains/china", to:"mountains#china"
+  
   resources :mountains
 end
