@@ -4,8 +4,15 @@
     <div class="cover-inner">
       <div class="cover-contents">
         <div class="greeting text-center">
-          <p>山おじさんのホームページへようこそ<br>
-             愛知の130山を紹介しています</p>
+          
+          <% if manager_logged_in? %>
+            <p>管理人としてログインしています</p>
+            <%= link_to "ログアウト", managers_logout_path, method: :delete %>
+          <% else %>
+            <p>山おじさんのホームページへようこそ<br>
+               愛知の130山を紹介しています</p>
+          <% end %>
+          
         </div>
         <div class="top-image text-center">
           <img src="images/top.jpg" alt="山トップ画像">
@@ -14,6 +21,8 @@
     </div>
   </div>
 <% end %>
+
+
 
 <h2>愛知の130山</h2>
 <h2>What's new</h2>

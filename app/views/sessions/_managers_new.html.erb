@@ -1,0 +1,19 @@
+<div class="text-center">
+  <h1>ここから先は管理人ページです</h1>
+</div>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(:session, url: managers_login_path) do |f| %>
+      <div class="form-group">
+        <%= f.label :loginid, 'ID' %>
+        <%= f.text_field :loginid, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :password, 'Password' %>
+        <%= f.password_field :password, class: 'form-control' %>
+      </div>
+      <%= f.submit 'Log in', class: 'btn btn-primary btn-block' %>
+    <% end %>
+  </div>
+</div>
