@@ -60,7 +60,11 @@
     </table>
   </div>
   <div class="main-right">
-    
+    <% if @mountain.route? %>
+      <%= image_tag @mountain.route.url%>
+　  <% else %> 
+　　  <%= image_tag 'noimage.gif' %>
+  　<% end %>
   </div>
 </div>
 <div class="images">

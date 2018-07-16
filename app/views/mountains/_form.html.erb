@@ -38,6 +38,9 @@
   <%= f.label :comment, "感想" %>
   <%= f.text_area :comment, class:"form-control" %>
   <p></p>
+  
+  <%= f.label :route, "ルート画像" %>
+　<%= f.file_field :route %> 
 
   <%= f.submit "投稿",class: 'btn-primary btn-block' %>
 <% end %>

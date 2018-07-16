@@ -70,6 +70,6 @@ class MountainsController < ApplicationController
   private
   
   def mountain_params
-    params.require(:mountain).permit(:name, :area, :climbing_date, :height, :time, :distance, :height_difference, :view, :recommend, :fatigue, :comment)
+    params.require(:mountain).permit(:name, :area, :climbing_date, :height, :time, :distance, :height_difference, :view, :recommend, :fatigue, :comment, :route)
   end
 end
