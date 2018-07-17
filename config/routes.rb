@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root to: "toppages#index"
   
+  get "toppages/message", to: "toppages#messages"
+  
   get "managers/login", to: "sessions#new"
   post "managers/login", to: "sessions#create"
   delete "managers/logout", to: "sessions#destroy"
@@ -14,6 +16,7 @@ Rails.application.routes.draw do
   get "mountains/china", to:"mountains#china"
    
   get "mountains/:id/photo", to:"mountains#photo"
+  
   
   resources :mountains
 
