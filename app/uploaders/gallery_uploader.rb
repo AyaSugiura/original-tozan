@@ -13,7 +13,7 @@ class GalleryUploader < CarrierWave::Uploader::Base
   end
 
   def public_id
-    return image.id
+    return model.id
   end
 
 end
