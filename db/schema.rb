@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180717015737) do
+ActiveRecord::Schema.define(version: 20180717054736) do
 
   create_table "galleries", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -20,6 +20,14 @@ ActiveRecord::Schema.define(version: 20180717015737) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["manager_id"], name: "index_galleries_on_manager_id", using: :btree
+  end
+
+  create_table "information", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "content"
+    t.integer  "manager_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["manager_id"], name: "index_information_on_manager_id", using: :btree
   end
 
   create_table "managers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -59,6 +67,7 @@ ActiveRecord::Schema.define(version: 20180717015737) do
   end
 
   add_foreign_key "galleries", "managers"
+  add_foreign_key "information", "managers"
   add_foreign_key "mountains", "managers"
   add_foreign_key "photos", "mountains"
 end

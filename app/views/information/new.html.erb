@@ -1,0 +1,14 @@
+<%= form_for(@information) do |f| %>
+
+
+　　<%= f.label :content, "お知らせ" %>
+　　<%= f.text_field :content,class: "form-control" %> 
+
+    <p></p>
+    <ul>
+      <li>〇〇山の備忘録を追加しました</li>
+      <li>ギャラリーに写真を追加しました</li>
+    </ul>
+    <p></p>
+    <%= f.submit "投稿",class: 'btn-primary btn-block' %>
+<% end %>

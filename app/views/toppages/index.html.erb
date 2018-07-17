@@ -26,9 +26,21 @@
   <ul>
     <li><%= link_to "備忘録一覧", mountains_path %></li>
     <li><%= link_to "ギャラリー", galleries_path %></li>
-    <li>お知らせ一覧</li>
+    <li><%= link_to "お知らせ", new_information_path %></li>
   </ul>
 <% end %>
 
 <h2>愛知の130山</h2>
 <h2>What's new</h2>
+  <div class="information">
+    <% @information.each do |information| %>
+      <dl>
+        <dt>・<%= information.content %></dt>
+        <dd><%= information.created_at %>
+        <% if manager_logged_in? %>
+          <%= link_to "削除", information, method: :delete, class: 'btn btn-danger btn-xs' %>
+        <% end %>
+        </dd>
+      </dl>
+    <% end %>
+  </div>

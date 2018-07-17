@@ -21,4 +21,6 @@ Rails.application.routes.draw do
   
   resources :galleries
   
+  resources :information, only:[:new, :create, :destroy ]
+  
 end
