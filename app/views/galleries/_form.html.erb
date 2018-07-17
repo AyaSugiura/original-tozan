@@ -5,6 +5,11 @@
   <%= f.label :image, "写真" %>
   <%= f.file_field :image %>
   
+        <%= f.file_field :image %>
+        <%= f.hidden_field :image_cache %>
+  
+  
+  
   <%= f.label :comment, "コメント" %>
   <%= f.text_area :comment, class: "form-control" %>
   <p></p>

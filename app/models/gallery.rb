@@ -5,5 +5,5 @@ class Gallery < ApplicationRecord
   validates :image, presence: true
   validates :name, presence: true
   
-  mount_uploader :image, ImageUploader
+  mount_uploader :image, GalleryUploader
 end

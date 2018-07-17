@@ -60,3 +60,21 @@ end
 
 gem 'carrierwave'
 gem 'rmagick'
+
+source 'https://rubygems.org'
+
+
+
+gem 'carrierwave'
+gem 'cloudinary'
+
+gem 'heroku'
+
+group :test, :development do
+    gem 'sqlite3'
+end
+
+
+
+
+gem 'jquery-rails'
