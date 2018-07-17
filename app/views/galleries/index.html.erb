@@ -1,15 +1,21 @@
 <h1>愛知の山写真館</h1>
 
+<div class="gallery">
+  <div class="row">
+    <% @galleries.each do |gallery| %>
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <%= image_tag gallery.image.url %>
+        <p><%= link_to "#{gallery.name}", gallery_path(gallery)%></p>
+        <% if manager_logged_in? %>
+          <%= link_to "編集", "/galleries/#{gallery.id}/edit", class: 'btn btn-success btn-xs'%>
+          <%= link_to "削除", gallery, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-xs' %>
+        <% end %>
+      </div>
+    <% end %>
+    </div>
+  </div>
 
-<% @galleries.each do |gallery| %>
-  <div class="gallery-image"><%= image_tag gallery.image.url %></div>
-  <p><%= link_to "#{gallery.name}", gallery_path(gallery)%></p>
-  
-  <% if manager_logged_in? %>
-    <%= link_to "編集", "/galleries/#{gallery.id}/edit", class: 'btn btn-success btn-xs'%>
-    <%= link_to "削除", gallery, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-xs' %>
-  <% end %>
-<% end %>
+
 
 <% if manager_logged_in? %>
   <div class="text-center"><%= link_to "写真を追加", new_gallery_path, class: "btn btn-primary" %></div>

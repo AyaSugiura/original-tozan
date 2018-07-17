@@ -14,8 +14,10 @@
           <% end %>
           
         </div>
-        <div class="top-image text-center">
-          <img src="images/top.jpg" alt="山トップ画像">
+        <div class="top-image">
+          <div class="row">
+            <img src="images/top.jpg" alt="山トップ画像"  class="img-responsive center-block">
+          </div>
         </div>
       </div>
     </div>
@@ -30,10 +32,15 @@
   </ul>
 <% end %>
 
-<h2>愛知の130山</h2>
-<h2>What's new</h2>
-  <div class="information">
-    <% @information.each do |information| %>
+<div class="container">
+  <div class="row">
+    <div class="aichinoyama col-md-5">
+      <h2>愛知の130山</h2>
+      <p>愛知県には「尾張」「西三河」「奥三河」「東三河」の４地域に別れ、全部で130の山があります。</p>
+    </div>
+    <div class="information col-md-offset-2 col-md-5">
+      <h2>管理人からのお知らせ</h2>
+      <% @information.each do |information| %>
       <dl>
         <dt>・<%= information.content %></dt>
         <dd><%= information.created_at %>
@@ -43,4 +50,10 @@
         </dd>
       </dl>
     <% end %>
+    </div>
   </div>
+</div>
+
+
+    
+
