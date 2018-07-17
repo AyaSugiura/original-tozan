@@ -41,6 +41,7 @@ class MountainsController < ApplicationController
   end
   
   def destroy
+    @mountain = current_manager.mountains.find_by(id: params[:id])
     @mountain.destroy
     flash[:success] = "備忘録を削除しました"
     redirect_to mountains_path
@@ -65,6 +66,8 @@ class MountainsController < ApplicationController
   def china
     @mountains_china = Mountain.where(area: 5).order("created_at DESC").page(params[:page])
   end
+  
+  
   
   
   private

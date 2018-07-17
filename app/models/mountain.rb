@@ -5,4 +5,6 @@ class Mountain < ApplicationRecord
   validates :area, presence: true
   
   mount_uploader :route, ImageUploader
+  
+  has_many :photos
 end

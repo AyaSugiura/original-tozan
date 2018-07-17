@@ -1,0 +1,13 @@
+<%= form_for(gallery) do |f| %>
+  <%= f.label :name, "山名" %>
+  <%= f.text_field :name, class: "form-control" %>
+  
+  <%= f.label :image, "写真" %>
+  <%= f.file_field :image %>
+  
+  <%= f.label :comment, "コメント" %>
+  <%= f.text_area :comment, class: "form-control" %>
+  <p></p>
+  <%= f.submit "投稿",class: 'btn-primary btn-block' %>
+  <% end %>
+  

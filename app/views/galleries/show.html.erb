@@ -1,0 +1,7 @@
+<h1><%= @gallery.name %></h1>
+<div class="gallery-show"><%= image_tag @gallery.image.url %></div>
+
+<h2>コメント</h2>
+  <p><%= @gallery.comment %></p>
+  
+<p><%= link_to "一覧に戻る", galleries_path %></p>

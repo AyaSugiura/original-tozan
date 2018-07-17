@@ -3,16 +3,16 @@
 <div>
   <table class="table">
     <thead>
-      <th>id</th>
       <th>山名</th>
       <th>エリア</th>
       <th>標高</th>
       <th>登山日</th>
+      <th></th>
+      <th></th>
     </thead>
     <tbody>
       <% @mountains.each do |mountain| %>
       <tr>
-        <th><%=link_to "#{mountain.id}", edit_mountain_path(mountain)%></th>
         <th><%= mountain.name%></th>
         <th>
           <%= mountain.area %>.
@@ -30,8 +30,9 @@
         </th>
         <th><%= mountain.height %></th>
         <th><%= mountain.climbing_date %></th>
-        <th><%= link_to "Delete", mountain, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-xs' %>
-</th>
+        <th><%= link_to "編集", "/mountains/#{mountain.id}/edit", class: 'btn btn-success btn-xs'%></th>
+        <th><%= link_to "画像", photos_path,class: 'btn btn-primary btn-xs'  %></th>
+        <th><%= link_to "Delete", mountain, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-xs' %></th>
       </tr>
       <% end %>
     </tbody>
