@@ -5,7 +5,8 @@
   </div>
 </div>
 <div class="data-main">
-  <div class="main-left">
+  <div class="row">
+  <div class="main-left col-sm-6">
     <h2>基本データ</h2>
     <table class="table">
       <tr>
@@ -59,16 +60,21 @@
       </tr>
     </table>
   </div>
-  <div class="main-right">
+  <div class="main-right col-sm-6">
+    <h2></h2>
     <% if @mountain.route? %>
       <%= image_tag @mountain.route.url%>
 　  <% else %> 
 　　  <%= image_tag 'noimage.gif' %>
   　<% end %>
   </div>
+  </div>
 </div>
+
 <div class="images">
-  
+  <div class="row">
+    <p>ここに画像とコメントが入る</p>
+  </div>
   
 </div>
 <div class="data-bottom">
