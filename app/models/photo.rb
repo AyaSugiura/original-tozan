@@ -3,6 +3,7 @@ class Photo < ApplicationRecord
   
   validates :image, presence: true 
   validates :mountain_id, presence: true
+  validates :comment, presence: true
   
   mount_uploader :image, ImageUploader
 end

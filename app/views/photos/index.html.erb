@@ -1,1 +1,21 @@
-aiue
+
+<h1><%= @mountain.name%>の画像</h1>
+
+<div class="row mountain-images">
+  <% @photos.each do |photo| %>
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <%= image_tag photo.image.url %>
+      <p><%= photo.comment %></p>
+      <% if manager_logged_in? %>
+        <%= link_to "編集", edit_mountain_photo_path(@mountain.id, photo.id), class: 'btn btn-success btn-xs'%>
+        <%= link_to "削除", photo, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-xs' %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
+
+
+<div class="text-center">
+  <%= link_to "新規画像", new_mountain_photo_path, class: "btn btn-primary"%>
+</div>

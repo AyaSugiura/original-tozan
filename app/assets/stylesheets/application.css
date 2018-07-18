@@ -41,6 +41,10 @@
   }
 }
 
+.mountain-images img{
+  width: 240px;
+  height: 320px;
+}
 
 .gallery img{
   width: 320px;

@@ -31,8 +31,8 @@
         <th><%= mountain.height %></th>
         <th><%= mountain.climbing_date %></th>
         <th><%= link_to "編集", "/mountains/#{mountain.id}/edit", class: 'btn btn-success btn-xs'%></th>
-        <th><%= link_to "画像", photos_path,class: 'btn btn-primary btn-xs'  %></th>
-        <th><%= link_to "Delete", mountain, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-xs' %></th>
+        <th><%= link_to "画像", mountain_photos_path(mountain),class: 'btn btn-primary btn-xs'  %></th>
+        <th><%= link_to "削除", mountain, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-xs' %></th>
       </tr>
       <% end %>
     </tbody>

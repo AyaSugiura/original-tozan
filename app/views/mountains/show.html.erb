@@ -71,12 +71,21 @@
   </div>
 </div>
 
+<p></p>
+
 <div class="images">
-  <div class="row">
-    <p>ここに画像とコメントが入る</p>
+  <div class="row mountain-images">
+    <%if @photos%>
+      <% @photos.each do |photo| %>
+        <div class="col-xs-12 col-sm-4 col-md-3">
+          <%= image_tag photo.image.url %>
+          <p><%= photo.comment %></p>
+        </div>
+      <% end %>
+    <% end %>
   </div>
-  
 </div>
+
 <div class="data-bottom">
   <h2>感想</h2>
   <p><%= @mountain.comment %></p>

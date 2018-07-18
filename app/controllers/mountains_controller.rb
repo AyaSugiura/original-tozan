@@ -7,6 +7,7 @@ class MountainsController < ApplicationController
   
   def show
     @mountain = Mountain.find(params[:id])
+    @photos = Photo.where(mountain_id: @mountain.id)
   end
   
   def new
@@ -67,6 +68,7 @@ class MountainsController < ApplicationController
     @mountains_china = Mountain.where(area: 5).order("created_at DESC").page(params[:page])
   end
   
+
   
   
   

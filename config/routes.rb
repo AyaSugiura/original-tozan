@@ -14,14 +14,15 @@ Rails.application.routes.draw do
   get "mountains/okumikawa", to: "mountains#okumikawa"
   get "mountains/higashimikawa", to:"mountains#higashimikawa"
   get "mountains/china", to:"mountains#china"
-   
-  get "mountains/:id/photo", to:"mountains#photo"
   
+  get "toppages/message", to: "toppages#message" 
   
-  resources :mountains
+  resources :mountains do
+    resources :photos, only: [:new, :create, :index, :edit, :update]
+  end
+  
+  resources :photos, only: [:destroy, :show]
 
-  resources :photos
-  
   resources :galleries
   
   resources :information, only:[:new, :create, :destroy ]
