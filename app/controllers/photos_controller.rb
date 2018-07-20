@@ -1,4 +1,5 @@
 class PhotosController < ApplicationController
+  before_action :require_manager_logged_in, only: [:new, :create, :edit, :update, :destroy]
   def index
     @mountain = Mountain.find(params[:mountain_id])
     @photos = Photo.where(mountain_id: @mountain.id)
