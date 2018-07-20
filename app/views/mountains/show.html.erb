@@ -63,7 +63,7 @@
   <div class="main-right col-sm-6">
     <h2></h2>
     <% if @mountain.route? %>
-      <%= image_tag @mountain.route.url%>
+      <div class="route-image"><%= image_tag @mountain.route.url%></div>
 　  <% else %> 
 　　  <%= image_tag 'noimage.gif' %>
   　<% end %>
