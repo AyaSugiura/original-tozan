@@ -77,15 +77,62 @@
   width: 100%;
 }
 
-.gallery img{
-  width: 320px;
-  height: 240px;
+.gallery{
 }
 
-.gallery-show img{
+.gallery h1{
+  text-align: center;
+  padding: 10px;
+  background-color: black;
+  color:white;
+  border-radius: 5px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media(max-width: 374px){
+  .gallery h1{
+    font-size: 24px;
+  }
+}
+
+.gallery p{
+  text-align: center;
+}
+
+.gallery-image{
+  width: 100%;
+  margin: 0 auto;
+}
+
+.gallery-image img{
+  width: 100%;
+}
+
+.gallery-show{
+  width: 640px;
+  margin: 0 auto;
+}
+
+.show-image img{
   width: 640px;
   height: 480px;
+  margin: 0 auto;
 }
+
+@media(max-width: 630px){
+  .gallery-show{
+  width: 350px;
+  margin: 0 auto;
+}
+
+.show-image img{
+  width: 350px;
+  height: 262px;
+  margin: 0 auto;
+}
+}
+
 
 @media(min-width: 768px){
   .route-image{
