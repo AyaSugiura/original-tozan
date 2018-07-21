@@ -5,8 +5,25 @@
 }
 
 .profile-image img{
-  max-width: 90%;
-  min-width: 90%;
+  width: 90%;
+}
+
+.profile-data{
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 768px){
+  .profile-image{
+    width: 50%;
+    float: left;
+  }
+  
+  .profile-data{
+    width: 50%;
+    float: left;
+  }
 }
 
 
@@ -41,9 +58,23 @@
   }
 }
 
-.mountain-images img{
-  width: 240px;
-  height: 320px;
+.mountain-data{
+  width: 90%;
+  margin: 0 auto;
+}
+
+.mountain-data img{
+  width: 100%;
+  margin: 0 auto;
+}
+
+.mountain-image {
+  width: 100%;
+  margin:0 auto;
+}
+
+.mountain-image img{
+  width: 100%;
 }
 
 .gallery img{

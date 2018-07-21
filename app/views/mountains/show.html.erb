@@ -4,9 +4,9 @@
     <p>登山日 <%= @mountain.climbing_date %></p>
   </div>
 </div>
-<div class="data-main">
+<div class="mountain-data">
   <div class="row">
-  <div class="main-left col-sm-6">
+  <div class="mountain-left col-sm-6">
     <h2>基本データ</h2>
     <table class="table">
       <tr>
@@ -60,7 +60,7 @@
       </tr>
     </table>
   </div>
-  <div class="main-right col-sm-6">
+  <div class="mountin-right col-sm-6">
     <h2></h2>
     <% if @mountain.route? %>
       <div class="route-image"><%= image_tag @mountain.route.url%></div>
@@ -73,18 +73,16 @@
 
 <p></p>
 
-<div class="images">
   <div class="row mountain-images">
     <%if @photos%>
       <% @photos.each do |photo| %>
         <div class="col-xs-12 col-sm-4 col-md-3">
-          <%= image_tag photo.image.url %>
+          <div class="mountain-image"><%= image_tag photo.image.url %></div>
           <p><%= photo.comment %></p>
         </div>
       <% end %>
     <% end %>
   </div>
-</div>
 
 <div class="data-bottom">
   <h2>感想</h2>

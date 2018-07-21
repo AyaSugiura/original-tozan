@@ -4,7 +4,7 @@
 <div class="row mountain-images">
   <% @photos.each do |photo| %>
     <div class="col-xs-12 col-sm-6 col-md-4">
-      <%= image_tag photo.image.url %>
+      <div class="mountain-image"><%= image_tag photo.image.url %></div>
       <p><%= photo.comment %></p>
       <% if manager_logged_in? %>
         <%= link_to "編集", edit_mountain_photo_path(@mountain.id, photo.id), class: 'btn btn-success btn-xs'%>
