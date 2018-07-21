@@ -1,13 +1,12 @@
 <div class="data-top">
-  <h1><%= @mountain.name %></h1>
+  <h1><%= @mountain.name %>　　　<span>登山日 <%= @mountain.climbing_date %></span></h1>
   <div class="top-right">
-    <p>登山日 <%= @mountain.climbing_date %></p>
   </div>
 </div>
 <div class="mountain-data">
+  <h2>山歩き記録</h2>
   <div class="row">
   <div class="mountain-left col-sm-6">
-    <h2>基本データ</h2>
     <table class="table">
       <tr>
         <th>標高</th>
@@ -61,7 +60,6 @@
     </table>
   </div>
   <div class="mountin-right col-sm-6">
-    <h2></h2>
     <% if @mountain.route? %>
       <div class="route-image"><%= image_tag @mountain.route.url%></div>
 　  <% else %> 

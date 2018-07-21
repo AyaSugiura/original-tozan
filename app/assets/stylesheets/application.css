@@ -144,21 +144,23 @@
 
 @media(min-width: 768px){
   .route-image{
-    padding-top: 40px;
+    padding-top: 10px;
     padding-bottom: 25px;
   }
   .route-image img{
-    width: 350px;
-    height: 250px;
+    width: 300px;
+    height: 215px;
   }
 }
 
 
 @media(min-width: 991px){
   .route-image{
-    padding-left: 50px;
-    padding-top: 40px;
+    width: 400;
+    padding-top: 10px;
     padding-bottom: 25px;
+    padding-left: 50px;
+    margin: auto;
   }
   
   .route-image img{
@@ -167,7 +169,7 @@
   }
 }
 
-h1, h2{
+h1{
   text-align: center;
   padding: 10px;
   background-color: black;
@@ -178,6 +180,12 @@ h1, h2{
 }
 
 h2{
+  text-align: center;
+  background-color: black;
+  color:white;
+  border-radius: 5px;
+  margin-right: auto;
+  margin-left: auto;
   opacity: 0.8;
   padding: 5px;
 }
@@ -187,3 +195,8 @@ h2{
     font-size: 24px;
   }
 }
+
+h1 span{
+  font-size: 20px;
+}
+
