@@ -2,9 +2,9 @@
 
 <div class="gallery-show">
   <div class="show-image"><%= image_tag @gallery.image.url class:"img-responsive center-block" %></div>
-</div>
   <p></p>
   <p><%= @gallery.comment %></p>
+</div>
   
   <% if manager_logged_in? %>
     <%= link_to "編集", "/galleries/#{@gallery.id}/edit", class: 'btn btn-success btn-xs'%>
