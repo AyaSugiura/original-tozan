@@ -41,7 +41,7 @@
       <% @information.each do |information| %>
       <dl>
         <dt>・<%= information.content %></dt>
-        <dd><%= information.created_at %>
+        <dd><%= information.created_at.strftime('%Y年%m月%d日') %>
         <% if manager_logged_in? %>
           <%= link_to "削除", information, method: :delete, class: 'btn btn-danger btn-xs' %>
         <% end %>

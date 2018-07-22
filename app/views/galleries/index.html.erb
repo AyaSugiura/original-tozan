@@ -6,8 +6,10 @@
     <% @galleries.each do |gallery| %>
       <div class="col-xs-6 col-sm-4 col-md-3">
         <div class="gallery-image">
-        <%= image_tag gallery.image.url %>
-        <p><%= link_to "#{gallery.name}", gallery_path(gallery)%></p>
+        <%= link_to gallery_path(gallery) do %>
+          <%= image_tag gallery.image.url %>
+        <% end %>
+        <p><%= gallery.name %></p>
         </div>
       </div>
     <% end %>
