@@ -13,7 +13,7 @@
     <tbody>
       <% @mountains.each do |mountain| %>
       <tr>
-        <th><%= mountain.name%></th>
+        <th><%=link_to "#{mountain.name}", mountain_path(mountain.id) %></th>
         <th>
           <%= mountain.area %>.
           <% if mountain.area == 1 %>
@@ -28,7 +28,7 @@
             <%="中国"%>
           <% end %>
         </th>
-        <th><%= mountain.height %></th>
+        <th><%= mountain.height %> m</th>
         <th><%= mountain.climbing_date %></th>
         <th><%= link_to "編集", "/mountains/#{mountain.id}/edit", class: 'btn btn-success btn-xs'%></th>
         <th><%= link_to "画像", mountain_photos_path(mountain),class: 'btn btn-primary btn-xs'  %></th>
