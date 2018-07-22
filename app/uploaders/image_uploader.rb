@@ -1,7 +1,7 @@
 class ImageUploader < CarrierWave::Uploader::Base
   include Cloudinary::CarrierWave
 
-  process :convert => 'png'
+  #process :convert => 'png'
   process :tags => ['image']
 
   version :standard do
