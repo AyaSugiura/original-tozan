@@ -42,5 +42,16 @@
       </div>
     </div>
   </div>
+  <div class="information">
+    <div>
+      <h1>山おじさんからのお知らせ</h1>
+      <div class="information-txt">
+        <% @information.each do |information| %>
+          <p><span class="fa fa-paperclip"></span><%= information.content %>　（<%= information.created_at.strftime("%Y年%m月%d日") %>） </p>
+          <p></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
   
 </div>

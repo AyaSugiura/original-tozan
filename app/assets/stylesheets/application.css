@@ -364,3 +364,15 @@ nav .menu:after{
     min-height: 300px;
   }
 }
+
+.information{
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  border-right:2px dotted black;
+  border-left:2px dotted black;
+}
+
+.information h1{
+  font-size: 20px;
+}
