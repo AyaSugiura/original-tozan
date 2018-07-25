@@ -1,19 +1,25 @@
-<h1>奥三河の山</h1>
-<div>
-  <table class="table">
-    <thead>
-      <th>山名</th>
-      <th>標高</th>
-      <th>登山日</th>
-    </thead>
-    <tbody>
-      <% @mountains_okumikawa.each do |mountain| %>
-      <tr>
-        <th><%=link_to "#{mountain.name}", mountain_path(mountain)%></th>
-        <th><%= mountain.height %></th>
-        <th><%= mountain.climbing_date %></th>
-      </tr>
-      <% end %>
-    </tbody>
-  </table>
+<div class="mountains-list">
+  <h1>奥三河の山</h1>
+  <div class="area-image">
+    <img src="../images/area/area3.jpg" alt="奥三河画像">
+  </div>
+  <div class="area-mountains">
+    <table class="table">
+      <thead>
+        <th>山名</th>
+        <th>標高</th>
+        <th>登山日</th>
+      </thead>
+      <tbody>
+        <% @mountains_okumikawa.each do |mountain| %>
+          <tr>
+            <th><%=link_to "#{mountain.name}", mountain_path(mountain)%></th>  
+            <th><%= mountain.height %></th>
+            <th><%= mountain.climbing_date %></th>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <span class="fa fa-angle-double-left"></span><a href="/mountains/area">エリア選択に戻る</a>
 </div>

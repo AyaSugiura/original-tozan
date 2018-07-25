@@ -7,19 +7,17 @@
   <% end %>
   
   <p>クリックして拡大してね</p>
-  <div class="row">
+  <div class="gallery-images">
     <% @galleries.each do |gallery| %>
-      <div class="col-xs-6 col-sm-4 col-md-3">
-        <div class="gallery-image">
+      <div class="gallery-image">
         <%= link_to gallery_path(gallery) do %>
           <%= image_tag gallery.image.url %>
         <% end %>
         <p><%= gallery.name %></p>
-        </div>
       </div>
     <% end %>
-    </div>
   </div>
+</div>
 
 
 

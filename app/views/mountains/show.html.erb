@@ -1,13 +1,13 @@
-<div class="data-top">
-  <h1><%= @mountain.name %>　　　<span>登山日 <%= @mountain.climbing_date %></span></h1>
-  <div class="top-right">
+<div class="mountains-show">
+  <div class="mountain-name">
+    <h1><%= @mountain.name %></h1>
+    <p>登山日 <%= @mountain.climbing_date %></p>
   </div>
-</div>
-<div class="mountain-data">
-  <h2>山歩き記録</h2>
-  <div class="row">
-  <div class="mountain-left col-sm-6">
-    <table class="table">
+  
+  <div class="mountain-record">
+    <h2>山歩き記録</h2>
+    <div class="data">
+      <table class="table">
       <tr>
         <th>標高</th>
         <td><%= @mountain.height %>m</td>
@@ -58,31 +58,31 @@
         </td>
       </tr>
     </table>
+    </div>
+    <div class="route">
+      <% if @mountain.route? %>
+        <%= image_tag @mountain.route.url%>
+　    <% else %> 
+　　    <%= image_tag 'noimage.gif' %>
+    　<% end %>
+    </div>
   </div>
-  <div class="mountin-right col-sm-6">
-    <% if @mountain.route? %>
-      <div class="route-image"><%= image_tag @mountain.route.url%></div>
-　  <% else %> 
-　　  <%= image_tag 'noimage.gif' %>
-  　<% end %>
-  </div>
-  </div>
-</div>
-
-<p></p>
-
-  <div class="row mountain-images">
+  
+  <div class="mountain-images">
+    <h2>写　真</h2>
     <%if @photos%>
       <% @photos.each do |photo| %>
-        <div class="col-xs-12 col-sm-4 col-md-3">
-          <div class="mountain-image"><%= image_tag photo.image.url %></div>
+        <div class="mountain-image">
+          <%= image_tag photo.image.url %>
           <p><%= photo.comment %></p>
         </div>
       <% end %>
     <% end %>
   </div>
-
-<div class="data-bottom">
-  <h2>感想</h2>
-  <p><%= @mountain.comment %></p>
+  
+  <div class="mountain-comment">
+    <h2>感　想</h2>
+    <p><%= @mountain.comment %></p>
+  </div>
 </div>
+
