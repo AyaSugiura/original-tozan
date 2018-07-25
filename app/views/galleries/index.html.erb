@@ -1,6 +1,11 @@
 
 <div class="gallery">
   <h1>山おじさんの写真館</h1>
+  
+  <% if manager_logged_in? %>
+  <div class="text-center"><%= link_to "写真を追加", new_gallery_path, class: "btn btn-primary" %></div>
+  <% end %>
+  
   <p>クリックして拡大してね</p>
   <div class="row">
     <% @galleries.each do |gallery| %>
@@ -18,7 +23,5 @@
 
 
 
-<% if manager_logged_in? %>
-  <div class="text-center"><%= link_to "写真を追加", new_gallery_path, class: "btn btn-primary" %></div>
-<% end %>
+
 

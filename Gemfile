@@ -63,7 +63,7 @@ gem 'rmagick'
 
 source 'https://rubygems.org'
 
-
+gem 'pry-byebug'
 
 gem 'carrierwave'
 gem 'cloudinary'

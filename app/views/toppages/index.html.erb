@@ -1,60 +1,46 @@
-<% content_for :cover do %>
-
-  <div class="cover">
-    <div class="cover-inner">
-      <div class="cover-contents">
-        <div class="greeting text-center">
-          
-          <% if manager_logged_in? %>
-            <p>管理人としてログインしています</p>
-            <%= link_to "ログアウト", managers_logout_path, method: :delete %>
-          <% else %>
-            <p>愛知の山130の踏破を目指して<br>
-               週末のんびり気ままな山歩きを楽しんでいます٩( ᐛ )و</p>
-          <% end %>
-          
-        </div>
-        <div class="main-image top-image">
-          <img src="images/top.jpg" alt="山トップ画像"  class="img-responsive center-block">
-        </div>
+<div class="toppage">
+  <div class="manager">
+    <% if manager_logged_in? %>
+      <p>管理人としてログインしています。</p>
+      <%= link_to 'ログアウト', managers_logout_path, method: :delete %>
+      <ul>
+        <li><%= link_to "山歩き編集", mountains_path %></li>
+        <li><%= link_to "ギャラリー写真追加", galleries_path %></li>
+        <li><%= link_to "お知らせ追加", new_information_path %></li>
+      </ul>
+    <% end %>
+  </div>
+  <div class="top-image">
+    <img src="/images/top1.jpg" src="トップ画像">
+    <p>愛知の山130の踏破を目指して、週末のんびり気ままな山歩きを楽しんでいます٩( ᐛ )و</p>
+  </div>
+  <div class="pages">
+    <h1>山おじさんの気まぐれ日記へようこそ</h1>
+    <p>各ページの紹介です</p>
+    <div class="page mountains">
+      <div class="container">
+        <h2>山歩き日記</h2>
+        <img src="images/tozan.jpg">
+        <p>　山おじさんの山歩き日記です。愛知県内にある130の山全てに登るのが目標。山の基本情報、登山ルート、道中で撮った写真、山おじさんのお疲れ度(!?)を掲載しています。<br>
+        　愛知には高い山や有名な山はありませんが、どれも個性的な山ですのでぜひご覧ください。</p>
+      </div>
+    </div>
+    <div class="page galleries">
+      <div class="container">
+        <h2>ギャラリー</h2>
+        <img src="images/mountain.jpg">
+        <p>　日本の美しい自然を写真に納め掲載しています。<br>
+           　山の色は季節によって変化していきます。同じ山でも、春は爽やかな青緑、夏は涼しげな深緑、秋は紅葉の赤、冬は葉を失った茶<br>
+          　写真を通じて日本の四季の山の美しさを感じ取っていただければ幸いです。</p>
+      </div>
+    </div>
+    <div class="page summit">
+      <div class="container">
+        <h2>頂上(準備中)</h2>
+        <img src="images/summit.jpg">
+        <p>山の頂上から撮った写真を掲載するページです。ただ今準備中ですのでしばらくお待ちください。</p>
       </div>
     </div>
   </div>
-<% end %>
-
-<% if manager_logged_in? %>
-  <ul>
-    <li><%= link_to "備忘録一覧", mountains_path %></li>
-    <li><%= link_to "ギャラリー", galleries_path %></li>
-    <li><%= link_to "お知らせ", new_information_path %></li>
-  </ul>
-<% end %>
-
-<div class="container">
-  <div class="row">
-    <div class="aichinoyama">
-      <h2>ようこそ</h2>
-      <p>山おじさんのホームページへようこそ。愛知の130山の踏破を目指して週末は山に出かけています。<br>
-      備忘録に山の記録をしているのでぜひご覧ください。<br>
-      ギャラリーには全国で撮影した写真を掲載しています。日本の美しい風景をお楽しみください。
-      </p>
-    </div>
-    <div class="information">
-      <h2>What's New</h2>
-      <% @information.each do |information| %>
-      <dl>
-        <dt>・<%= information.content %></dt>
-        <dd><%= information.created_at.strftime('%Y年%m月%d日') %>
-        <% if manager_logged_in? %>
-          <%= link_to "削除", information, method: :delete, class: 'btn btn-danger btn-xs' %>
-        <% end %>
-        </dd>
-      </dl>
-    <% end %>
-    </div>
-  </div>
+  
 </div>
-
-
-    
-

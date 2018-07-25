@@ -14,11 +14,9 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
-  </head>
 
   <body>
     <%= render 'layouts/navbar' %>
-    <%= yield :cover %>
     <div class="container">
       <%= render 'layouts/flash_messages' %>
 　　　<%= yield %>

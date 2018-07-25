@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
   root to: "toppages#index"
   
   get "toppages/message", to: "toppages#messages"
@@ -8,6 +9,8 @@ Rails.application.routes.draw do
   delete "managers/logout", to: "sessions#destroy"
 
   resources :managers, only: [:index]
+  
+  get "mountains/area", to:"mountains#area"
   
   get "mountains/owari", to:"mountains#owari"
   get "mountains/nishimikawa", to:"mountains#nishimikawa"

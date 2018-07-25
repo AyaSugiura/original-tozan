@@ -32,6 +32,9 @@ class MountainsController < ApplicationController
   
   def update
     @mountain = Mountain.find(params[:id])
+    binding.pry
+    # @mountain.route = nil
+    # @mountain.save
     if @mountain.update(mountain_params)
       flash[:success] = "登山備忘録が更新されました"
       redirect_to mountains_path
@@ -68,7 +71,8 @@ class MountainsController < ApplicationController
     @mountains_china = Mountain.where(area: 5).order("created_at DESC").page(params[:page])
   end
   
-
+  def area
+  end
   
   
   
