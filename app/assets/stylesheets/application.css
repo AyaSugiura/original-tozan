@@ -378,6 +378,7 @@ h2{
 .mountain-images{
   width: 90%;
   margin: 0 auto;
+  min-height: 335px;
 }
 
 .mountain-images:after{
@@ -388,6 +389,7 @@ h2{
 
 .mountain-image{
   width: 25%;
+  min-height: 335px;
   float: left;
 }
 
