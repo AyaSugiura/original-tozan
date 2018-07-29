@@ -1,0 +1,61 @@
+
+/* 管理人プロフィール------------------------------------------------------*/
+.profile{
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.profile .container{
+  width: 90%;
+  margin: 0 auto;
+}
+
+.profile .contianer:after{
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.profile .container .profile-image{
+  float:left;
+  width: 50%;
+  padding-top: 20px;
+}
+
+.profile-image img{
+  display: block;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.profile .yamaoji{
+  float:left;
+  width: 50%;
+  padding: 20px;
+}
+
+
+.profile table tr{
+  border-bottom: 1px solid #CCCCCC;
+  height: 40px;
+}
+
+.profile table tr:hover{
+  background-color: #EEEEEE;
+}
+
+.profile tbody th{
+  text-align: center;
+  width: 30%;
+}
+
+@media(max-width: 767px){
+  .profile .container .profile-image{
+  width: 100%;
+  }
+  
+  .profile-image img{
+  width: 90%;
+  display: block;
+  }
+}

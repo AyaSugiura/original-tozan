@@ -37,7 +37,7 @@ class MountainsController < ApplicationController
       @mountain.update(mountain_params)
       flash[:success] = "登山備忘録が更新されました"
       redirect_to mountains_path
-    elsif @mountain.update 
+    elsif @mountain.update(mountain_params)
       flash[:success] = "登山備忘録が更新されました"
       redirect_to mountains_path
     else
