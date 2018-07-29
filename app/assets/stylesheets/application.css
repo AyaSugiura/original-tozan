@@ -389,13 +389,25 @@ h2{
 
 .mountain-image{
   width: 25%;
-  min-height: 335px;
+  min-height: 385px;
   float: left;
 }
 
 .mountain-image img{
   width: 100%;
   padding: 10px;
+}
+
+@media(max-width: 1100px){
+  .mountain-image{
+    min-height: 360px;
+  }
+}
+
+@media(max-width: 950px){
+  .mountain-image{
+    min-height: 340px;
+  }
 }
 
 @media(max-width: 767px){
