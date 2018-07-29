@@ -32,7 +32,12 @@ class MountainsController < ApplicationController
   
   def update
     @mountain = Mountain.find(params[:id])
-    if @mountain.update(mountain_params)
+    if @mountain.update(mountain_params) && params[:mountain][:route]
+      @mountain.route = nil
+      @mountain.update(mountain_params)
+      flash[:success] = "登山備忘録が更新されました"
+      redirect_to mountains_path
+    elsif @mountain.update 
       flash[:success] = "登山備忘録が更新されました"
       redirect_to mountains_path
     else

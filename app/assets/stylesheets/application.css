@@ -11,6 +11,7 @@
 .title{
   margin: 0;
   text-align: center;
+  padding-top: 25px;
 }
 
 .title a{
@@ -74,6 +75,11 @@ nav .menu:after{
   .menu{
     width: 100%;
   }
+  
+  .title a img{
+  width: 80%;
+  margin: 0 auto;
+}
 }
 
 /* 全体の共通-----------------------------------------------------*/
@@ -363,6 +369,7 @@ h2{
 }
 
 .mountain-comment p{
+  text-align: left;
   padding:10px;
   border: 1px solid black;
   border-radius: 10px;
