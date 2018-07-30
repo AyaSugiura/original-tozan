@@ -30,4 +30,6 @@ Rails.application.routes.draw do
   
   resources :information, only:[:new, :create, :destroy ]
   
+  resources :summits
+  
 end
