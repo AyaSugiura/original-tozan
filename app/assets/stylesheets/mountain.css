@@ -130,7 +130,9 @@
   float: left;
   width: 100%;
   }
-  
+}
+
+@media(max-width: 767px){
   .mountain-image{
     width: 33.33333333333%;
   }

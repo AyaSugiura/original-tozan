@@ -1,0 +1,47 @@
+.summit{
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.summit-images{
+  width: 90%;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 335px;
+}
+
+.summit-images:after{
+  content:"";
+  display: block;
+  clear: both;
+}
+
+.summit-image{
+  width: 25%;
+  float: left;
+}
+
+.summit-image img{
+  width: 100%;
+  padding: 10px;
+}
+
+
+@media(max-width: 768px){
+  
+  .summit-image{
+    width: 33.33333333333%;
+  }
+}
+
+@media(max-width: 600px){
+  .summit-image{
+    width: 100%;
+  }
+  
+  .summit-image img{
+  padding:10px 30px;
+ }
+}
