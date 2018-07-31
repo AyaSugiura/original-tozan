@@ -1,9 +1,7 @@
 <h1>頂上編集ページ（準備中）</h1>
 <%= form_for(@summit) do |f| %>
   
-  <%= f.label :image, "写真" %>
-  <%= f.file_field :image %>
-  <%= f.hidden_field :image_cache %>
+  <%= image_tag(@summit.image_url) %><br>
   
   <%= f.label :comment, "コメント" %>
   <%= f.text_area :comment, class: "form-control" %>
