@@ -11,7 +11,7 @@
   
   <div class="summit-images">
     <% @summits.each do |summit| %>
-      <div class="summit-image">
+      <div class="summit-image" id="summit<%= summit.id %>">
         <%= image_tag(summit.image_url) %>
         <p><%= summit.comment %></p>
         <% if manager_logged_in? %>

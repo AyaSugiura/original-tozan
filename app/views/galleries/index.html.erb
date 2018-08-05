@@ -9,7 +9,7 @@
   <p>クリックして拡大してね</p>
   <div class="gallery-images">
     <% @galleries.each do |gallery| %>
-      <div class="gallery-image">
+      <div class="gallery-image" id="gallery<%= gallery.id %>">
         <%= link_to gallery_path(gallery) do %>
           <%= image_tag gallery.image.url %>
         <% end %>
