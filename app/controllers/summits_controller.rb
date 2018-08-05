@@ -4,7 +4,7 @@ class SummitsController < ApplicationController
   before_action :require_manager_logged_in, only: [:new, :create, :edit, :update, :destroy]
   
   def index
-    @summits = Summit.all.order('created_at DESC').page(params[:page])
+    @summits = Summit.all.order('created_at DESC').page(params[:page]).per(24)
   end
   
   def new

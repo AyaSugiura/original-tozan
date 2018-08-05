@@ -78,3 +78,5 @@ end
 
 
 gem 'jquery-rails'
+
+gem "kaminari"

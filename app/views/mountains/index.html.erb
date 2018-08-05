@@ -41,3 +41,7 @@
 <div class="text-center">
   <%= link_to "新規備忘録", new_mountain_path, class: "btn btn-primary"%>
 </div>
+
+<div>
+  <%= paginate @mountains %>
+</div>

@@ -2,7 +2,7 @@ class MountainsController < ApplicationController
   before_action :require_manager_logged_in, only: [:index, :new, :create, :edit, :update, :destroy]
   
   def index
-    @mountains = Mountain.all.order("created_at DESC").page(params[:page])
+    @mountains = Mountain.all.order("created_at DESC").page(params[:page]).per(50)
   end
   
   def show

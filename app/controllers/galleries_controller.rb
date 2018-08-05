@@ -20,7 +20,7 @@ class GalleriesController < ApplicationController
       flash[:success] = 'ギャラリーに写真を投稿しました。'
       redirect_to galleries_path
     else
-      @galleries = current_manager.galleries.order('created_at DESC').page(params[:page])
+      @galleries = current_manager.galleries.order('created_at DESC').page(params[:page]).per(24)
       flash.now[:danger] = '投稿に失敗しました。'
       render :new
     end
