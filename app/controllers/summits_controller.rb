@@ -5,6 +5,7 @@ class SummitsController < ApplicationController
   
   def index
     @summits = Summit.all.order('created_at DESC').page(params[:page]).per(24)
+    @summit3 = Summit.find(3)
   end
   
   def new

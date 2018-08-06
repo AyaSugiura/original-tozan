@@ -11,8 +11,9 @@
   
   <div class="summit-images">
     <% @summits.each do |summit| %>
-      <div class="summit-image" id="summit<%= summit.id %>">
-        <%= image_tag(summit.image_url) %>
+      <div class="summit-image">
+        
+        <%= image_tag(summit.image_url)%>
         <p><%= summit.comment %></p>
         <% if manager_logged_in? %>
           <%= link_to "編集", "/summits/#{summit.id}/edit", class: 'btn btn-success btn-xs'%>
@@ -23,5 +24,21 @@
   </div>
   <%= paginate @summits %>
   
-
+  <div class="image-modal-wrapper">
+    <div class="Modal">
+      <div class="close-modal">
+        <i class="fa fa-times"></i>
+      </div>
+      <div class="next-modal">
+        <i class="fa  fa-angle-right"></i>
+      </div>
+      <div class="before-modal">
+        <i class="fa fa-angle-left"></i>
+      </div>
+      <div class="modal-image">
+          
+      </div>
+    </div>
+  </div>
 </div>
+

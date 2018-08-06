@@ -23,9 +23,14 @@
   float: left;
 }
 
+
 .summit-image img{
   width: 100%;
   padding: 10px;
+}
+
+.summit-image img:hover{
+  cursor: pointer;
 }
 
 
@@ -38,10 +43,78 @@
 
 @media(max-width: 600px){
   .summit-image{
-    width: 100%;
+    width: 50%;
   }
-  
-  .summit-image img{
-  padding:10px 30px;
- }
+}
+
+.image-modal-wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 100;
+  display: none;
+}
+
+.Modal {
+  width: 30%;
+  position: absolute;
+  top: 20%;
+  left: 35%;
+  background-color: #e6ecf0;
+  border-radius: 10px;
+  height: auto;
+  text-align: center;
+}
+
+.fa-times {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 30px;
+  color: rgba(128, 128, 128, 0.46);
+  cursor: pointer;
+}
+
+.fa-angle-left{
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  font-size: 30px;
+  color: rgba(128, 128, 128, 0.46);
+  cursor: pointer;
+}
+
+.fa-angle-right{
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  font-size: 30px;
+  color: rgba(128, 128, 128, 0.46);
+  cursor: pointer;
+}
+
+.modal-image .summit-image{
+  width: 100%;
+}
+
+.modal-image .summit-image img{
+  width: 80%;
+  margin-top: 20px;
+}
+
+@media(max-width: 1200px){
+.Modal {
+    width: 50%;
+    left: 25%;
+  }
+}
+
+@media(max-width: 600px){
+  .Modal {
+    width: 70%;
+    left: 15%;
+  }
 }
