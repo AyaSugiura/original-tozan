@@ -3,34 +3,34 @@ $(function() {
   $('.summit-image').click(function(){
     $('.image-modal-wrapper').fadeIn();
     $(this).clone().appendTo('.modal-image');
-    $(this).addClass("active");
+    $(this).addClass("preview");
     toggleChangeBtn();
   });
   
   $(".next-modal").click(function(){
-    $(".active").removeClass("active").next().addClass("active");
+    $(".preview").removeClass("preview").next().addClass("preview");
     $(".modal-image").html("");
-    $(".active").clone().appendTo('.modal-image');
+    $(".preview").clone().appendTo('.modal-image');
     toggleChangeBtn();
     
   });
   
   $(".before-modal").click(function(){
-    $(".active").removeClass("active").prev().addClass("active");
+    $(".preview").removeClass("preview").prev().addClass("preview");
     $(".modal-image").html("");
-    $(".active").clone().appendTo('.modal-image');
+    $(".preview").clone().appendTo('.modal-image');
     toggleChangeBtn();
   });
   
   
   function toggleChangeBtn() {
-    var activeIndex = $('.summit-image').index($('.active'));
+    var previewIndex = $('.summit-image').index($('.preview'));
     $('.before-modal').show();
     $('.next-modal').show();
-    if (activeIndex == 0) {
+    if (previewIndex == 0) {
       $('.before-modal').hide();
     } 
-    if (activeIndex == $(".summit-image").length -2 ) {
+    if (previewIndex == $(".summit-image").length -2 ) {
       $('.next-modal').hide();
     }
   }
@@ -39,7 +39,7 @@ $(function() {
   $(".close-modal").click(function(){
     $(".image-modal-wrapper").fadeOut();
     $(".modal-image").html("");
-    $(".active").removeClass("active");
+    $(".preview").removeClass("preview");
   });
   
 });
