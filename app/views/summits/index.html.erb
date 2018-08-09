@@ -14,7 +14,7 @@
       <div class="summit-image">
         
         <%= image_tag(summit.image_url)%>
-        <p><%= summit.comment %></p>
+        <p><%= summit.summitNumber %>. <%= summit.comment %></p>
         <% if manager_logged_in? %>
           <%= link_to "編集", "/summits/#{summit.id}/edit", class: 'btn btn-success btn-xs'%>
           <%= link_to "削除", summit, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-xs' %>

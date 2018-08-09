@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180730110016) do
+ActiveRecord::Schema.define(version: 20180809123426) do
 
   create_table "galleries", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -70,8 +70,9 @@ ActiveRecord::Schema.define(version: 20180730110016) do
     t.string   "image"
     t.string   "comment"
     t.integer  "manager_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "summitNumber"
     t.index ["manager_id"], name: "index_summits_on_manager_id", using: :btree
   end
 

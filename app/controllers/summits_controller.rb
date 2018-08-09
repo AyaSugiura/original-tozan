@@ -48,7 +48,7 @@ class SummitsController < ApplicationController
   private
   
   def summit_params
-    params.require(:summit).permit(:image, :comment)
+    params.require(:summit).permit(:image, :comment, :summitNumber)
   end
   
 end

@@ -5,6 +5,9 @@
   <%= f.file_field :image %>
   <%= f.hidden_field :image_cache %>
   
+  <%= f.label :summitNumber, "番号(半角英数字)" %>
+  <%= f.text_field :summitNumber, class: "form-control" %>
+  
   <%= f.label :comment, "コメント" %>
   <%= f.text_area :comment, class: "form-control" %>
   <p></p>
