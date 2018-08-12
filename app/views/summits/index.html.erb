@@ -8,6 +8,9 @@
   <div class="text-center"><%= link_to "写真を追加", new_summit_path, class: "btn btn-primary" %></div>
   <% end %>
   
+  <%= link_to "新着順", summits_path %>
+  <%= link_to "番号降順", summits_path(order: 'number_desc') %>
+  <%= link_to "番号昇順", summits_path(order: 'number_asc') %>
   
   <div class="summit-images">
     <% @summits.each do |summit| %>
@@ -44,4 +47,3 @@
     </div>
   </div>
 </div>
-
