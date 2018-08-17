@@ -3,7 +3,7 @@ class GalleriesController < ApplicationController
   before_action :require_manager_logged_in, only: [:new, :create, :edit, :update, :destroy]
   
   def index
-    @galleries = Gallery.all.order('created_at DESC').page(params[:page])
+    @galleries = Gallery.all.order('created_at DESC').page(params[:page]).per(24)
   end
 
   def show
