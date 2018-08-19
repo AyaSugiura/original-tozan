@@ -83,6 +83,32 @@ nav .menu:after{
 }
 }
 
+/* ドロップダウン-----------------------------------------------------
+
+.dropdown{
+  display: none;
+}
+
+.menu .mountain-index:hover .dropdown{
+  display: block;
+}
+
+.dropdown ul{
+  list-style: none;
+  padding: 0;
+}
+
+.dropdown li{
+  width: 80%;
+  height: 18px;
+  margin: 0 auto;
+}
+
+.dropdown li a{
+  font-size: 15px;
+}
+
+*/
 
 /* 全体の共通-----------------------------------------------------*/
 
@@ -116,3 +142,4 @@ h2{
     font-size: 15px;
   }
 }
+

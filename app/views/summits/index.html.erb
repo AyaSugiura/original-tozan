@@ -12,7 +12,7 @@
   <%= link_to "番号降順", summits_path(order: 'number_desc') %>
   <%= link_to "番号昇順", summits_path(order: 'number_asc') %>
   
-  <div class="summit-images">
+  <div id="summit-images">
     <% @summits.each do |summit| %>
       <div class="summit-image">
         
